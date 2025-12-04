@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flip Cards — Egyptian Gods</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cairo:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <!-- Scroll progress bar -->
+    <div id="scrollProgress"></div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+      <!-- Bootstrap Navbar with Dropdowns and Search -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <!-- Brand -->
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img
+              src="/assets/images/icon.png"
+              alt="Logo"
+              width="35"
+              height="35"
+              class="d-inline-block align-text-top me-2"
+            />
+            Egyptian Gods
+          </a>
+
+          <!-- Hamburger button for mobile -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Dropdown groups -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Major Gods -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="majorDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Major Gods
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="majorDropdown">
+                  <li><a class="dropdown-item" href="#ra">Ra</a></li>
+                  <li><a class="dropdown-item" href="#osiris">Osiris</a></li>
+                  <li><a class="dropdown-item" href="#isis">Isis</a></li>
+                  <li><a class="dropdown-item" href="#horus">Horus</a></li>
+                </ul>
+              </li>
+
+              <!-- Underworld & Chaos -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="underworldDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Underworld & Chaos
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="underworldDropdown">
+                  <li><a class="dropdown-item" href="#anubis">Anubis</a></li>
+                  <li><a class="dropdown-item" href="#set">Set</a></li>
+                  <li><a class="dropdown-item" href="#sekhmet">Sekhmet</a></li>
+                </ul>
+              </li>
+
+              <!-- Creativity & Protection -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="creativityDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Creativity & Protection
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="creativityDropdown">
+                  <li><a class="dropdown-item" href="#hathor">Hathor</a></li>
+                  <li><a class="dropdown-item" href="#amun">Amun</a></li>
+                  <li><a class="dropdown-item" href="#ptah">Ptah</a></li>
+                  <li><a class="dropdown-item" href="#bastet">Bastet</a></li>
+                </ul>
+              </li>
+
+              <!-- Other Gods -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="otherDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Other Gods
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="otherDropdown">
+                  <li><a class="dropdown-item" href="#sobek">Sobek</a></li>
+                  <li><a class="dropdown-item" href="#maat">Maat</a></li>
+                  <li><a class="dropdown-item" href="#khonsu">Khonsu</a></li>
+                  <li><a class="dropdown-item" href="#thoth">Thoth</a></li>
+                  <li><a class="dropdown-item" href="#neith">Neith</a></li>
+                  <li><a class="dropdown-item" href="#khnum">Khnum</a></li>
+                  <li><a class="dropdown-item" href="#tefnut">Tefnut</a></li>
+                  <li><a class="dropdown-item" href="#shu">Shu</a></li>
+                  <li><a class="dropdown-item" href="#seshat">Seshat</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <!-- Search form -->
+            <!-- Search Form -->
+            <form class="d-flex" role="search" onsubmit="return false;">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search god..."
+                aria-label="Search"
+                id="searchInput"
+              />
+              <button
+                class="btn btn-warning"
+                type="button"
+                onclick="searchGod()"
+              >
+                <i class="fas fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- NEW -->
+    <!-- Cards -->
+    <main class="container">
+      <section class="cards">
+        <!-- Ra -->
+        <article class="flip-card" data-id="ra" id="ra">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/ra.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Ra</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Ra</h3>
+              <p>
+                Sun god and creator of life, sailing across the sky by day and
+                the underworld by night.
+              </p>
+              <button class="btn more" data-target="ra">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Osiris -->
+        <article class="flip-card" data-id="osiris" id="osiris">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/osiris.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Osiris</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Osiris</h3>
+              <p>
+                God of the afterlife and resurrection, ruler of the realm of the
+                dead.
+              </p>
+              <button class="btn more" data-target="osiris">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Isis -->
+        <article class="flip-card" data-id="isis" id="isis">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/isis.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Isis</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Isis</h3>
+              <p>
+                Goddess of magic and motherhood, known for her devotion and
+                protective power.
+              </p>
+              <button class="btn more" data-target="isis">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Horus -->
+        <article class="flip-card" data-id="horus" id="horus">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Horus.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Horus</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Horus</h3>
+              <p>
+                Sky god of protection and kingship, depicted with a falcon head.
+              </p>
+              <button class="btn more" data-target="horus">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Anubis -->
+        <article class="flip-card" data-id="anubis" id="anubis">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/anubis.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Anubis</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Anubis</h3>
+              <p>God of mummification and the afterlife journey.</p>
+              <button class="btn more" data-target="anubis">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Set -->
+        <article class="flip-card" data-id="set" id="set">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Set.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Set</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Set</h3>
+              <p>God of chaos, storms, and desert destruction.</p>
+              <button class="btn more" data-target="set">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hathor -->
+        <article class="flip-card" data-id="hathor" id="hathor">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/hathor.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Hathor</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Hathor</h3>
+              <p>Goddess of love, beauty, music, joy and motherhood.</p>
+              <button class="btn more" data-target="hathor">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Amun -->
+        <article class="flip-card" data-id="amun" id="amun">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/amon.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Amun</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Amun</h3>
+              <p>Creator god, later merged with Ra as Amun-Ra.</p>
+              <button class="btn more" data-target="amun">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ptah -->
+        <article class="flip-card" data-id="ptah" id="ptah">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/ptah.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Ptah</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Ptah</h3>
+              <p>God of craftsmen, builders, and creation by thought.</p>
+              <button class="btn more" data-target="ptah">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sekhmet -->
+        <article class="flip-card" data-id="sekhmet" id="sekhmet">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/sekhmet.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Sekhmet</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Sekhmet</h3>
+              <p>War and healing goddess, depicted as a lioness.</p>
+              <button class="btn more" data-target="sekhmet">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thoth -->
+        <article class="flip-card" data-id="thoth" id="thoth">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Thoth.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Thoth</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Thoth</h3>
+              <p>God of wisdom, writing, and knowledge.</p>
+              <button class="btn more" data-target="thoth">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bastet -->
+        <article class="flip-card" data-id="bastet" id="bastet">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/bastet.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Bastet</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Bastet</h3>
+              <p>Goddess of home, cats, protection and harmony.</p>
+              <button class="btn more" data-target="bastet">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sobek -->
+        <article class="flip-card" data-id="sobek" id="sobek">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Sobek.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Sobek</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Sobek</h3>
+              <p>God of crocodiles, strength, and water.</p>
+              <button class="btn more" data-target="sobek">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Maat -->
+        <article class="flip-card" data-id="maat" id="maat">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Maat.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Maat</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Maat</h3>
+              <p>Goddess of truth, justice, and cosmic balance.</p>
+              <button class="btn more" data-target="maat">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Khonsu -->
+        <article class="flip-card" data-id="khonsu" id="khonsu">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Khonsu.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Khonsu</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Khonsu</h3>
+              <p>
+                Moon god of protection and healing, often shown with a lunar
+                crown.
+              </p>
+              <button class="btn more" data-target="khonsu">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Neith -->
+        <article class="flip-card" data-id="neith" id="neith">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Neith.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Neith</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Neith</h3>
+              <p>Goddess of war and hunting, also associated with creation.</p>
+              <button class="btn more" data-target="neith">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Khnum -->
+        <article class="flip-card" data-id="khnum" id="khnum">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Khnum.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Khnum</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Khnum</h3>
+              <p>God of the Nile and creation, depicted with a ram's head.</p>
+              <button class="btn more" data-target="khnum">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tefnut -->
+        <article class="flip-card" data-id="tefnut" id="tefnut">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Tefnut.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Tefnut</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Tefnut</h3>
+              <p>Goddess of moisture and rain, sister of Shu.</p>
+              <button class="btn more" data-target="tefnut">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Shu -->
+        <article class="flip-card" data-id="shu" id="shu">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/shu.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Shu</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Shu</h3>
+              <p>God of air and wind, supporter of the sky.</p>
+              <button class="btn more" data-target="shu">More</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Seshat -->
+        <article class="flip-card" data-id="seshat" id="seshat">
+          <div class="flip-card-inner">
+            <div
+              class="flip-card-front"
+              style="background-image: url('/assets/images/Seshat.jpg')"
+            >
+              <div class="front-caption">
+                <h3>Seshat</h3>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Seshat</h3>
+              <p>Goddess of writing, knowledge, and wisdom.</p>
+              <button class="btn more" data-target="seshat">More</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="detailModal" class="modal">
+      <div class="modal-inner">
+        <button class="modal-close"><i class="fa fa-times"></i></button>
+        <div class="modal-img"></div>
+        <div class="modal-body">
+          <h2 class="modal-title"></h2>
+          <p class="modal-text"></p>
+          <a class="modal-link" href="#" target="_blank">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Brand: Logo + Name -->
+        <div class="footer-brand">
+          <img
+            src="/assets/images/icon.png"
+            class="footer-logo"
+            alt="Egyptian Gods Logo"
+          />
+          <span class="footer-text">Egyptian Gods</span>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-social">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-copy">
+          © 2025 Egyptian Gods — All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
