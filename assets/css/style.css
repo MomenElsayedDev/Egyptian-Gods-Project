@@ -18,7 +18,14 @@ body {
 }
 body {
   margin: 0;
+  padding: 0;
+
   background-image: url("/assets/images/Egyptian-Gods.jpg");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+
   color: #fff;
   font-family: "Playfair Display", serif;
 
@@ -66,12 +73,12 @@ body {
 /* Cards grid */
 .cards {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 cards per row */
+  grid-template-columns: repeat(6, 1fr);
   gap: 12px;
   max-width: 1650px;
   margin: 0 auto;
   padding: 12px;
-  margin-top: -20px;
+  margin-top: -60px; /* نزلناها شويه */
 }
 
 /* Flip card wrapper */
@@ -664,39 +671,4 @@ body {
   width: 0%;
   z-index: 9999;
   transition: width 0.1s ease-out;
-}
-
-.animated-toggler {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
-}
-
-.animated-toggler span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-
-.animated-toggler.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.animated-toggler.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.animated-toggler.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
 }
